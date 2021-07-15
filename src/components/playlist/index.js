@@ -1,4 +1,5 @@
 import React from 'react';
+import './playlist.css';
 
 class Playlist extends React.Component{
     constructor(props) {

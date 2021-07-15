@@ -1,5 +1,5 @@
 import './App.css';
-import Playlist from './pages/Playlist';
+import Playlist from './components/playlist';
 import data from './data/Data';
 
 function App() {
