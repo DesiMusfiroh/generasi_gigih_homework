@@ -1,5 +1,6 @@
 import React from 'react';
 import Track from '../track';
+import './style.css';
 
 class Playlist extends React.Component{
     constructor(props) {
@@ -11,7 +12,7 @@ class Playlist extends React.Component{
 
     render() {
         return (
-            <div>         
+            <div id="playlist-container">         
                 {this.state.playlist.map((track) => (
                     <Track key={track.id} data={track} />
                 ))}

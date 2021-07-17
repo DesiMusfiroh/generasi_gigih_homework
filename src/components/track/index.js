@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 class Track extends React.Component {
     constructor(props) {
@@ -13,11 +14,11 @@ class Track extends React.Component {
 
     render() {
         return(
-            <div id="track">
+            <div className="track-item">
                 <img src={this.state.imageUrl} alt="album-image" ></img>
                 <h3>{this.state.title}</h3>
                 <p>{this.state.artistName}</p>
-                <button className="btn">Select</button>
+                <button className="btn">SELECT TRACK</button>
             </div>
         );
     }
