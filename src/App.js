@@ -1,6 +1,6 @@
 import './App.css';
 import Playlist from './components/playlist';
-import data from './data/Data';
+import data from './data/playlist';
 
 function App() {
   return (

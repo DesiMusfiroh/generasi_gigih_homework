@@ -1,30 +1,21 @@
 import React from 'react';
-import './playlist.css';
+import Track from '../track';
 
 class Playlist extends React.Component{
     constructor(props) {
         super(props)
-        const {album, name, artists} = this.props.data;
         this.state = {
-            title: name,
-            imageUrl: album.images[1].url,
-            artistName: artists[0].name
+           playlist: this.props.data,
         }
     }
 
     render() {
         return (
-        <div>
-            <h2>Music Playlist</h2>
-            <div id="playlists-container">
-                <div className="playlist-box">
-                    <img src={this.state.imageUrl} alt="album-image" ></img>
-                    <h3>{this.state.title}</h3>
-                    <p>{this.state.artistName}</p>
-                    <button className="btn">Select</button>
-                 </div>
+            <div>         
+                {this.state.playlist.map((track) => (
+                    <Track key={track.id} data={track} />
+                ))}
             </div>
-        </div>
         );
     }
 }
