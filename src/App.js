@@ -1,13 +1,12 @@
 import './App.css';
-import Playlist from './components/playlist';
+import Login from './components/login';
 import Header from './components/header';
-import data from './data/playlist';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Playlist data={data}/>
+      <Login />
     </div>
   );
 }

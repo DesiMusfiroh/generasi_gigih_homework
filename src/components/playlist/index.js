@@ -6,13 +6,13 @@ class Playlist extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-           playlist: this.props.data,
+            playlist: this.props.data,
         }
     }
 
     render() {
         return (
-            <div id="playlist-container">         
+            <div id="playlist-container">
                 {this.state.playlist.map((track) => (
                     <Track key={track.id} data={track} />
                 ))}
