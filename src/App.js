@@ -29,13 +29,16 @@ function App() {
           user: user,
         });
       });
+
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: 'SET_PLAYLIST',
+          playlists: playlists,
+        })
+      })
     }
-    console.log("token saya", token);
   }, []);
 
-  console.log("user hihi", user);
-  console.log("token hihi", token);
-  
   return (
     <div className="App">
       {
