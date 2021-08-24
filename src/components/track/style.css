@@ -1,4 +1,44 @@
-.track-item {
+.track {
+  margin-left: 20px;
+  padding-left: 20px 10px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  border-radius: 10px;
+}
+
+.track:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.2;
+}
+
+.track_info {
+  margin-left: 20px;
+}
+
+.track_info > h3 {
+  font-size: 16px;
+}
+
+.track_info > p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.track_image {
+  height: 70px;
+  width: 70px;
+}
+
+.track-btn {
+  flex: 3;
+  margin-left: 30px;
+}
+
+/* .track {
   background-color: #f9e9c0;
   border-radius: 25px 25px 10px 10px;
   box-shadow: rgba(255, 255, 255, 0.8);
@@ -7,8 +47,9 @@
   text-align: center;
   box-shadow: 0px 5px 18px #e6d7c6;
   position: relative;
-}
+} */
 
+/*
 img {
   width: 180px;
   border-radius: 10px 50px 10px 50px;
@@ -44,4 +85,4 @@ h3 {
 
 p {
   margin: 5px 5px 45px 5px;
-}
+} */
