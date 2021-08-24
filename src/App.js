@@ -4,11 +4,12 @@ import Home from './pages/home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState} from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
+import {useDataLayerValue} from "./DataLayer";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [{ user, token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getToken();
@@ -16,19 +17,30 @@ function App() {
     const _token = hash.access_token;
 
     if (_token) {
-      setToken(_token);
+      dispatch({
+        type: 'SET_TOKEN',
+        token: _token,
+      });
+   
       spotify.setAccessToken(_token);
       spotify.getMe().then(user => {
-        console.log(user);
+        dispatch({
+          type: 'SET_USER',
+          user: user,
+        });
       });
     }
-  });
+    console.log("token saya", token);
+  }, []);
 
+  console.log("user hihi", user);
+  console.log("token hihi", token);
+  
   return (
     <div className="App">
       {
         token ? 
-          <Home />
+          <Home spotify={spotify}/>
         : ( <Login /> )
       }
    

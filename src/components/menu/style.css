@@ -1,0 +1,30 @@
+.menu {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  height: 40px;
+  color: grey;
+  transition: 200ms color ease-in;
+}
+
+.menu:hover {
+  color: white;
+}
+
+.menu > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.menu_icon {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+}
+
+.menu > p {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+}
