@@ -1,15 +1,18 @@
 import './App.css';
-import {Login, getToken} from './components/login';
+import { Login, getToken } from './components/login';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/home';
+import Search from './pages/search';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState} from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
-import {useDataLayerValue} from "./DataLayer";
+import { useDataLayerValue } from "./DataLayer";
 
 const spotify = new SpotifyWebApi();
+const code = new URLSearchParams(window.location.search).get("code")
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, search }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getToken();
@@ -37,12 +40,13 @@ function App() {
         });
       });
 
-      spotify.getPlaylist("0nBrSFkPGreSgVoPdMFmUU").then((response) =>
-      dispatch({
-        type: "SET_DISCOVER_WEEKLY",
-        discover_weekly: response,
-      })
-    );
+     spotify.getPlaylist("37i9dQZF1DX8lb9hHwQhmN").then((response) => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+     });
+
     }
   }, []);
 
@@ -50,7 +54,12 @@ function App() {
     <div className="App">
       {
         token ? 
-          <Home spotify={spotify}/>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Home} spotify={spotify} code={code} />
+              <Route path="/search" component={Search} spotify={spotify} />
+            </Switch>
+          </BrowserRouter>
         : ( <Login /> )
       }
    

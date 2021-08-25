@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
 
-function Menu({ title, Icon}) {
+function Menu({ title, url, Icon}) {
     return (
         <div className="menu">
             {Icon && <Icon className="menu_icon" />}
-            {Icon ? <h5>{title}</h5> : <p>{title}</p>}
+            {Icon ? <a href={url} >{title}</a> : <p>{title}</p>}
         </div>
     )
 }

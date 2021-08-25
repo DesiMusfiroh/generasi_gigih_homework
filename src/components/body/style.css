@@ -26,6 +26,12 @@
   box-shadow: 0 6px 60px rgba(0, 0, 0, 0.5);
 }
 
+.info_text > hr {
+  border: 2px solid grey;
+  width: 90%;
+  margin: 20px auto;
+}
+
 .info_text > h4 {
   font-size: 40px;
   margin-bottom: 10px;

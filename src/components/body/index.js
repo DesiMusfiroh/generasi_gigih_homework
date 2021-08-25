@@ -4,17 +4,18 @@ import Header from "../header";
 import { useDataLayerValue } from "../../DataLayer";
 import Track from "../track";
 
-function Body({ spotify }) {
+function Body({ spotify, code }) {
     const [{ discover_weekly }, dispatch] = useDataLayerValue();
     return (
         <div className="body">
-            <Header spotify={spotify} />
+            <Header spotify={spotify} code={code}/>
             <div className="body_info">
                 <img src={discover_weekly?.images[0].url} alt="" />
                 <div className="info_text">
                     <strong>PLAYLIST</strong>
                     <h4>Discover Weekly</h4>
                     <p>{discover_weekly?.description}</p>
+                    <hr />
                 </div>
             </div>
             <div className="body_tracks">

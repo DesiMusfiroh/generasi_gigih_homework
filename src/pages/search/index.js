@@ -1,19 +1,19 @@
 import React from 'react';
 import "./style.css";
 import Sidebar from "../../components/sidebar";
-import Body from "../../components/body";
 import Footer from "../../components/footer";
+import Body from "../../components/body";
 
-function Home({ spotify, code }) {
+function Search({ spotify }) {
     return (
-      <div className="home">
-        <div className="home_body">
+      <div className="search">
+        <div className="search_body">
           <Sidebar />
-          <Body spotify={spotify} code={code} />
+          <Body spotify={spotify} />
         </div>
         <Footer spotify={spotify} />
       </div>
     );
   }
 
-export default Home;
+export default Search;

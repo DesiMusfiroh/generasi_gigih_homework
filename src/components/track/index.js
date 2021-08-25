@@ -1,8 +1,10 @@
 import React from 'react';
 import './style.css';
 import Button from '@material-ui/core/Button';
+import { useDataLayerValue } from "../../DataLayer";
 
 function Track({ track }) {
+    const [{ search }, dispatch] = useDataLayerValue();
     return (
       <div className="track">
         <img className="track_image" src={track.album.images[0].url} alt="track_image" />
@@ -13,7 +15,9 @@ function Track({ track }) {
             {track.album.name}
           </p>
         </div>
-        <Button className="track_btn" variant="contained" color="secondary">Select</Button>
+        <div className="track_btn" >
+          <Button variant="contained" color="secondary">Select</Button>
+        </div>
       </div>
     );
   }

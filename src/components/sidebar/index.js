@@ -13,9 +13,9 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <img src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-green-logo-8.png" alt="" className="sidebar_logo"/>
-            <Menu title="Home" Icon={HomeIcon} />
-            <Menu title="Search" Icon={SearchIcon} />
-            <Menu title="Playlist" Icon={PlaylistIcon} />
+            <Menu title="Home" Icon={HomeIcon} url="/" />
+            <Menu title="Search" Icon={SearchIcon} url="/search" />
+            <Menu title="Playlist" Icon={PlaylistIcon} url="/library" />
             <hr/>
             <strong className="sidebar_title">PLAYLISTS</strong>
 
